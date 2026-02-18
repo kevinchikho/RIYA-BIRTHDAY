@@ -110,19 +110,18 @@ My favorite voice.
 My favorite person.  
 I love you more than distance can measure. 💙
 </div>
-
-<audio id="bgMusic" loop>
+<audio id="bgMusic">
   <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-function showLove() {
-  document.getElementById("hiddenMessage").style.display = "block";
-}
-
 function playMusic() {
-  document.getElementById("bgMusic").play();
+  var music = document.getElementById("bgMusic");
+  music.play().catch(function(error) {
+    alert("Tap the page once then press Play again 💙");
+  });
 }
+</script>
 
 // Floating hearts
 setInterval(function() {
