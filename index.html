@@ -17,25 +17,14 @@ body {
 h1 {
   margin-top: 40px;
   font-size: 45px;
-  animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 10px #00c3ff; }
-  to { text-shadow: 0 0 25px #00c3ff; }
+  text-shadow: 0 0 20px #00c3ff;
 }
 
 img {
-  width: 250px;
+  width: 260px;
   border-radius: 20px;
   margin-top: 20px;
-  box-shadow: 0 0 25px #00c3ff;
-  animation: fadeIn 2s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
+  box-shadow: 0 0 30px #00c3ff;
 }
 
 p {
@@ -46,24 +35,19 @@ p {
 }
 
 button {
-  padding: 12px 25px;
-  font-size: 16px;
+  padding: 15px 30px;
+  font-size: 18px;
   background-color: #00c3ff;
   border: none;
   color: white;
   cursor: pointer;
-  border-radius: 8px;
-  margin: 10px;
-  transition: 0.3s;
-}
-
-button:hover {
-  background-color: #008cba;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 #hiddenMessage {
   display: none;
-  margin-top: 20px;
+  margin-top: 25px;
   font-size: 22px;
   color: #00c3ff;
 }
@@ -95,35 +79,32 @@ button:hover {
 <img src="riya.jpg" alt="Ria">
 
 <p>
-Even though miles separate us, my heart feels closest to you today.  
-Every memory with you is special.  
-Every moment with you means everything to me.  
-Distance is just a test — and we’re passing it together.
+Even though we are miles apart,
+my heart is always with you.
+Every moment with you is special.
+Today is about celebrating you. 💙
 </p>
 
-<button onclick="showLove()">Click Here 💙</button>
-<button onclick="playMusic()">Play Our Song 🎵</button>
+<button onclick="startSurprise()">Click Here 💙</button>
 
 <div id="hiddenMessage">
-You are my favorite notification.  
-My favorite voice.  
-My favorite person.  
+You are my favorite person.
+My favorite notification.
+My forever choice.
 I love you more than distance can measure. 💙
 </div>
+
 <audio id="bgMusic">
   <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-function playMusic() {
-  var music = document.getElementById("bgMusic");
-  music.play().catch(function(error) {
-    alert("Tap the page once then press Play again 💙");
-  });
+function startSurprise() {
+  document.getElementById("hiddenMessage").style.display = "block";
+  document.getElementById("bgMusic").play();
 }
-</script>
 
-// Floating hearts
+// floating hearts
 setInterval(function() {
   var heart = document.createElement("div");
   heart.className = "heart";
