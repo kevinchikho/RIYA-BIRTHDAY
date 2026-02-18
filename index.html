@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happy Birthday Riya 💙</title>
+<title>Happy Birthday Ria 💙</title>
 
 <style>
 body {
   margin: 0;
   padding: 0;
   background: linear-gradient(to bottom, #001f3f, #003366);
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   color: white;
   text-align: center;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 h1 {
-  margin-top: 15%;
-  font-size: 50px;
+  margin-top: 40px;
+  font-size: 45px;
   animation: glow 2s infinite alternate;
 }
 
@@ -25,22 +25,35 @@ h1 {
   to { text-shadow: 0 0 25px #00c3ff; }
 }
 
+img {
+  width: 250px;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 25px #00c3ff;
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 p {
-  font-size: 22px;
-  margin: 20px;
+  font-size: 20px;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto;
+  line-height: 1.6;
 }
 
 button {
   padding: 12px 25px;
-  font-size: 18px;
+  font-size: 16px;
   background-color: #00c3ff;
   border: none;
   color: white;
   cursor: pointer;
   border-radius: 8px;
+  margin: 10px;
   transition: 0.3s;
 }
 
@@ -50,14 +63,14 @@ button:hover {
 
 #hiddenMessage {
   display: none;
-  margin-top: 30px;
-  font-size: 24px;
+  margin-top: 20px;
+  font-size: 22px;
   color: #00c3ff;
 }
 
 /* Floating hearts */
 .heart {
-  position: absolute;
+  position: fixed;
   color: #00c3ff;
   animation: floatUp 5s linear infinite;
 }
@@ -79,28 +92,39 @@ button:hover {
 
 <h1>Happy Birthday Ria 💙</h1>
 
+<img src="ria.jpg" alt="Ria">
+
 <p>
 Even though miles separate us, my heart feels closest to you today.  
-Every moment with you is special.  
-Every memory with you is priceless.  
-Distance means nothing when someone means everything.
+Every memory with you is special.  
+Every moment with you means everything to me.  
+Distance is just a test — and we’re passing it together.
 </p>
 
 <button onclick="showLove()">Click Here 💙</button>
+<button onclick="playMusic()">Play Our Song 🎵</button>
 
 <div id="hiddenMessage">
 You are my favorite notification.  
 My favorite voice.  
 My favorite person.  
-I love you, Ria. 💙
+I love you more than distance can measure. 💙
 </div>
+
+<audio id="bgMusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 function showLove() {
   document.getElementById("hiddenMessage").style.display = "block";
 }
 
-// Floating hearts generator
+function playMusic() {
+  document.getElementById("bgMusic").play();
+}
+
+// Floating hearts
 setInterval(function() {
   var heart = document.createElement("div");
   heart.className = "heart";
