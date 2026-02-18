@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday Riya 💙</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #001f3f, #003366);
+  font-family: 'Arial', sans-serif;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1 {
+  margin-top: 15%;
+  font-size: 50px;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00c3ff; }
+  to { text-shadow: 0 0 25px #00c3ff; }
+}
+
+p {
+  font-size: 22px;
+  margin: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #00c3ff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #008cba;
+}
+
+#hiddenMessage {
+  display: none;
+  margin-top: 30px;
+  font-size: 24px;
+  color: #00c3ff;
+}
+
+/* Floating hearts */
+.heart {
+  position: absolute;
+  color: #00c3ff;
+  animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Birthday Ria 💙</h1>
+
+<p>
+Even though miles separate us, my heart feels closest to you today.  
+Every moment with you is special.  
+Every memory with you is priceless.  
+Distance means nothing when someone means everything.
+</p>
+
+<button onclick="showLove()">Click Here 💙</button>
+
+<div id="hiddenMessage">
+You are my favorite notification.  
+My favorite voice.  
+My favorite person.  
+I love you, Ria. 💙
+</div>
+
+<script>
+function showLove() {
+  document.getElementById("hiddenMessage").style.display = "block";
+}
+
+// Floating hearts generator
+setInterval(function() {
+  var heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💙";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(function() {
+    heart.remove();
+  }, 5000);
+}, 500);
+</script>
+
+</body>
+</html>
